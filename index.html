@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FISSURE — Le Livre des Mythes Brisés</title>
+<meta name="description" content="Un site qui raconte les mythes du monde. Traverse la fissure.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<canvas id="fissure-canvas"></canvas>
+<div id="slide-wash" aria-hidden="true"><div class="s-black"></div><div class="s-white"></div></div>
+
+<div id="loader"><div class="loader-rune">ᚠ ᚱ ᛟ</div><div class="loader-bar"><span></span></div><p>le voile se déchire…</p></div>
+
+<header id="top">
+  <a class="brand" href="#" data-go="accueil">FISSURE<span>·mythes</span></a>
+  <nav>
+    <button data-go="accueil" class="active">Voile</button>
+    <button data-go="mythes">Mythes</button>
+    <button data-go="pantheons">Mondes</button>
+    <button data-go="apropos">Rite</button>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="page active" id="page-accueil">
+    <div class="hero">
+      <p class="kicker">recueil · 6 mondes · 6 brèches</p>
+      <h1>LE MONDE<br><em>SE FISSURE</em><br>LES MYTHES<br>S'ÉCHAPPENT</h1>
+      <p class="sub">Chaque mythe est une dimension. Chaque lecture est une brèche. Touche l'Éclat — le monde se brise en morceaux, et les morceaux reforment le monde suivant.</p>
+      <div class="hero-row">
+        <div class="eclat-wrap">
+          <!-- REMPLACE L'ÉPÉE : L'ÉCLAT-MONDE, fragment d'obsidienne tombé d'une autre dimension -->
+          <svg id="eclat" viewBox="0 0 220 340" role="img" aria-label="Éclat-monde">
+            <defs>
+              <linearGradient id="obs" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#2c2c34"/><stop offset=".45" stop-color="#0a0a0d"/>
+                <stop offset=".55" stop-color="#1b1b22"/><stop offset="1" stop-color="#050506"/>
+              </linearGradient>
+              <filter id="softBlur2" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="5"/></filter>
+            </defs>
+            <g id="eclat-glow" filter="url(#softBlur2)">
+              <path d="M110 12 L168 120 L138 250 L110 322 L82 250 L52 120 Z" fill="none" stroke="#d9d9e1" stroke-width="3"/>
+            </g>
+            <path d="M110 12 L168 120 L138 250 L110 322 L82 250 L52 120 Z" fill="url(#obs)" stroke="#cfcfd8" stroke-width="1.4"/>
+            <!-- fissure interne : la brèche dort dans l'éclat -->
+            <path id="eclat-crack" d="M110 20 L118 90 L102 140 L122 200 L100 260 L110 314" fill="none" stroke="#f2f2f6" stroke-width="1.6"/>
+            <path d="M102 140 L78 152 M122 200 L146 214 M100 260 L74 276" stroke="#f2f2f6" stroke-width="1" opacity=".7"/>
+            <!-- runes / glyphes des 6 mondes -->
+            <g fill="#e8e8ee" font-size="13" font-family="serif" text-anchor="middle" opacity=".9">
+              <text x="110" y="80">ᚠ</text><text x="110" y="130">𓊵</text><text x="110" y="180">夜</text>
+              <text x="110" y="225">Ν</text><text x="110" y="265">🐍</text>
+            </g>
+            <!-- 3 petits fragments orbitaux -->
+            <g fill="#0c0c0f" stroke="#c9c9d2">
+              <path class="orb o1" d="M40 90 l10 -14 6 16 z"/>
+              <path class="orb o2" d="M176 180 l12 -8 2 16 z"/>
+              <path class="orb o3" d="M60 270 l10 -6 4 14 z"/>
+            </g>
+          </svg>
+          <div class="eclat-shadow"></div>
+        </div>
+        <div class="hero-cta">
+          <button id="btn-fendre" class="btn-big">TOUCHER L'ÉCLAT</button>
+          <p class="hint">clique — fissures seules, puis les morceaux reforment la page suivante</p>
+          <div class="stats"><div><b>06</b><span>mythes</span></div><div><b>18</b><span>chapitres</span></div><div><b>18</b><span>effets</span></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="marquee"><span>Dan Ayido Houedo · Ymir · Osiris · Izanami · Obatala · Nyx ·&nbsp;</span><span>Dan Ayido Houedo · Ymir · Osiris · Izanami · Obatala · Nyx ·&nbsp;</span></div>
+  </section>
+
+  <section class="page" id="page-mythes">
+    <div class="sec-head"><p class="kicker">choisis ta brèche</p><h2>SIX MYTHES,<br>SIX FISSURES</h2></div>
+    <div class="grid" id="myth-grid"></div>
+  </section>
+
+  <section class="page" id="page-pantheons">
+    <div class="sec-head"><p class="kicker">écosystèmes du folklore</p><h2>QUATRE MONDES</h2></div>
+    <div class="worlds">
+      <article class="world"><h3>Vodun <span>Fon · Bénin</span></h3><p>Dan, Aziza, Mawu-Lisa. Un monde-serpent où l'arc-en-ciel porte la terre.</p><div class="bar"><i style="width:92%"></i></div><small>brèche : serpentine</small></article>
+      <article class="world"><h3>Nord <span>Scandinavie</span></h3><p>Ymir, Yggdrasil, Ragnarök. Glace de Niflheim contre feu de Muspell.</p><div class="bar"><i style="width:78%"></i></div><small>brèche : glacée</small></article>
+      <article class="world"><h3>Kemet <span>Égypte</span></h3><p>Osiris, Isis, Noun. Un monde-fleuve où mourir c'est germer.</p><div class="bar"><i style="width:84%"></i></div><small>brèche : limoneuse</small></article>
+      <article class="world"><h3>Shintō & Hellas <span>Japon · Grèce</span></h3><p>Yomi, Nyx, Chaos. Deux nuits originelles qui se répondent.</p><div class="bar"><i style="width:70%"></i></div><small>brèche : profonde</small></article>
+    </div>
+  </section>
+
+  <section class="page" id="page-apropos">
+    <div class="sec-head"><p class="kicker">mode d'emploi du rite</p><h2>QUE DES<br>FISSURES</h2></div>
+    <ol class="rite">
+      <li><b>01 — L'Éclat.</b> Son pourtour <i>scintille</i> doucement (aucun brillant agressif). Il remplace l'épée : un morceau d'un monde déjà brisé.</li>
+      <li><b>02 — La fissure seule.</b> Au changement de page, la dimension craque depuis le point de clic. Rien d'autre ne vient clôturer.</li>
+      <li><b>03 — Les morceaux.</b> Le monde éclate en éclats polygonaux qui s'envolent — et à travers leurs interstices apparaît la page suivante, comme un nouveau monde reformé.</li>
+      <li><b>04 — Les chapitres.</b> En lecture, chaque chapitre a son décor, ses particules et son détail rare (slides en contraste encre noir/blanc).</li>
+    </ol>
+  </section>
+</main>
+
+<div id="recit" aria-hidden="true">
+  <canvas id="recit-fx"></canvas>
+  <div class="recit-top"><button id="recit-close">✕ refermer la brèche</button><p id="recit-count"></p></div>
+  <div class="recit-body" id="recit-body">
+    <p class="kicker" id="recit-kicker"></p>
+    <h2 id="recit-title"></h2>
+    <h3 id="recit-chtitle"></h3>
+    <div id="recit-sym"></div>
+    <p id="recit-text"></p>
+    <aside id="recit-detail"></aside>
+    <div class="recit-nav"><button id="recit-prev">← chapitre</button><button id="recit-next">chapitre →</button></div>
+  </div>
+</div>
+
+<footer><p>FISSURE — recueil vivant · fait main, sans librairie · <a href="#" data-go="apropos">le rite</a></p></footer>
+
+<script src="app.js"></script>
+</body>
+</html>
